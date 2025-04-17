@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Form Submitted</title>
+  <style>
+    body {
+      background-color: #Ffd59a;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      color: #d63384;
+    }
+
+    .message {
+      background: #ffe4e1;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    span {
+      font-weight: bold;
+      color: #c71585;
+    }
+
+    @media (max-width: 425px){
+      .message{
+        width: 90%;
+        font-size: 1rem;
+      }
+
+      img{
+        height: 200px;
+        width: 160px;
+      }
+  </style>
+</head>
+<body>
+  <div class="message">
+    <h1> Happy 10th Monthsary💖</h1>
+    <img src="JingGEng.png" height="250px" width="200px">
+    <p>You picked: <span id="show-date">Loading...</span></p>
+  </div>
+
+  <script>
+      const params = new URLSearchParams(window.location.search);
+  const rawDate = params.get("date");
+  const dateDisplay = document.getElementById("show-date");
+
+  if (rawDate) {
+    const dateObj = new Date(rawDate);
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    const formattedDate = dateObj.toLocaleDateString("en-US", options);
+
+    dateDisplay.textContent = `${formattedDate} is our special day 💕`;
+  } else {
+    dateDisplay.textContent = "No date found 🥺";
+  }
+  </script>
+</body>
+</html>

@@ -1,14 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jing 10th Motmot</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jing10thMonthsary</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #Ffd59a;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: #ffe4e1;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: #d63384;
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #c71585;
+      font-weight: bold;
+    }
+
+    input[type="date"] {
+      width: 100%;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #fff;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    button {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff1493;
+    }
+
+    @media (max-width: 425px) {
+      form {
+        width: 70%;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <button class="glow-on-hover" type="button"><a href="#message">Click Me</a></button>
-
-    <section id="message">  </section>
+  <form action="/Jing10thmotmot/submitted.html" method="GET">
+    <h1>What day is today?</h1>
+    <label for="date">Date</label>
+    <input type="date" id="date" name="date" required />
+    <button type="submit">Submit</button>
+  </form>
 </body>
 </html>
